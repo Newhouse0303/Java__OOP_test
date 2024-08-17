@@ -17,22 +17,26 @@ class Game {
         UserInterface.displayUI();
     }
     public void play() {
-        
+        // the actual game event is initialised here. The description being a bit vague I'm not sure what a game entails but
+        // I would opt for creating an abstract class GameEvent to be extended by different SubGames (TwoPlayerGameEvent, TeamGameEvent, etc.) Then upon
+        // their creation current environment (weather, terrain, timeOfDay) data would be logged (and possibly updated during the game)
+        // and the Player attributes would be updated accordingly.
         
     }
 ```
 
-
 ```
 class UserInterface {
 
-    // here the interaction is done via command line but the class can be easily modified to accomodate web-based graphic UI.
+    // interaction is done via command line but the class can be easily modified to accomodate web-based graphic UI.
     // the class asks user the specs for creating a player and delegates the task to the PlayerManager
-    // once the Player is created the user is informed and asked to start the game which calls the `newGame.play()` method
+    // once the Player is created the user is informed and asked to enter a command to start the game
+    // once the command ( or later 'click' ) is received the `newGame.play()` method of the class Game is called
 }
 ```
 
-class PlayerManager is responsible for creating new players based on user input. If storing existing players were rquired it would also take care of that. 
+class PlayerManager is responsible for creating new players based on user input. 
+If storing existing players were rquired it would also take care of that. 
 
 
 ```
@@ -49,7 +53,7 @@ and some additional methods
 
 
 ```
-abstract class Player {
+abstract class Player implements Combat {
     int heath;
     int attackPower;
     int / String defence; 
@@ -70,3 +74,15 @@ class {SpecificPlayer} extends Player {
     // additional methods
 }
 ```
+The combats are modelled through abstract interface Combat which servers as a super for subinterfaces like `Duel`, `GroupBattle`, `Roast` etc. 
+```
+interface Combat {
+    // reduces one heath point
+    void reduceHealt(1);
+}
+
+interface GroupBattle {
+
+    // group battle -specific methods 
+
+}
