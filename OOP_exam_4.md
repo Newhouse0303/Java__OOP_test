@@ -16,12 +16,15 @@ class Game {
     public void run() {
         UserInterface.displayUI();
     }
-    public void play() {
-        // the actual game event is initialised here. The description being a bit vague I'm not sure what a game entails but
-        // I would opt for creating an abstract class GameEvent to be extended by different SubGames (TwoPlayerGameEvent, TeamGameEvent, etc.) Then upon
-        // their creation current environment (weather, terrain, timeOfDay) data would be logged (and possibly updated during the game)
-        // and the Player attributes would be updated accordingly.
-        
+    public void play() {'
+        /*
+        the actual game event is initialised here. The description being a bit vague
+        I'm not sure what a game entails but I would opt for creating an abstract class
+        GameEvent to be extended by different SubGames (TwoPlayerGameEvent, TeamGameEvent, etc.)
+        Then upon their creation current environment (weather, terrain, timeOfDay) data
+        would be logged (and possibly updated during the game) and the Player attributes
+        would be updated accordingly.
+        */   
     }
 ```
 
