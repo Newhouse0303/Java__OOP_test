@@ -1,0 +1,7 @@
+## 3. 
+
+a) The suitable class construction could be nested class: the initial search would be done through creating an instance of `class Query` which would hold a nested class `SearchResults` which in the case in question would assemble and return the list. Nesting works here as the result does not exist without the query and whent the search is closed also the nested result object disappears. Separating the two functions (search and return) in different classes makes the code maintainable ( e.g. database keys are modified, different outputs are required for different purposes etc. ). 
+
+b) The aforementioned `class Query` could have a method called `filter` which would take the List<Entry> and the filtering conditions as parameters. Depending on the overall complexity filter could also be an interface the `class Query` implements. This way different filter options could be added easily to complement the basic one which checks each Entry according to the condition and returns a boolean which is the used to put together a new filtered list. 
+
+c) The trasactions could be modeled by using the record class. `record Trasaction` would contain all the important information such as type, value, currency, time etc. The attributes would then be used to create the correct output via `toString` method and the attributes could be accessed easily for transactions and comparision. The immutability of Record is no problem here as the by the time of logging the transactions they are no longer subject to change.
