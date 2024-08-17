@@ -69,3 +69,4 @@ class {SpecificPlayer} extends Player {
     // additional methods
 }
 
+```
