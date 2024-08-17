@@ -11,10 +11,13 @@ class Game {
     public Game() {
     run();
 
-    void run() 
+    void run() {
+        UserInterface.displayUI(); 
+}
+```
 
 
-
+    
         
 }
 
