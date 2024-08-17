@@ -21,6 +21,8 @@ class Game {
         
     }
 ```
+
+
 ```
 class UserInterface {
 
@@ -32,6 +34,7 @@ class UserInterface {
 
 class PlayerManager is responsible for creating new players based on user input. If storing existing players were rquired it would also take care of that. 
 
+
 ```
 class PlayerManager {
     createPlayer( { userInput to match the class Player fields } ) {
@@ -41,12 +44,10 @@ class PlayerManager {
 }
 ```
 
-
-class environmentManager {}
-class combatManagers {}
-```
 The players a modeled with an `abstract class Player`, which holds the fields (health, attack power, defense, speed, superpower , name etc.) and methods `move()`, `attack()`, `fight()`, `die()` etc. shared by all types of players . Each player type has their own subclass `class {type here} extends Player`. The subclasses have additional fields for type-specific features. The mothods from the super are overridden according to the types' abilities 
 and some additional methods
+
+
 ```
 abstract class Player {
     int heath;
@@ -68,5 +69,4 @@ class {SpecificPlayer} extends Player {
     @Overriden methods from Player
     // additional methods
 }
-
 ```
