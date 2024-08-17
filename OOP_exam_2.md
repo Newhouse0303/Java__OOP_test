@@ -1,7 +1,6 @@
 
 ## 2.      
 
-Saara Uusitalo
 
 a) Polymorphism is evident in the way super class `Exception` is extended by `AIexception` and further `DataProcessingError` and
 `ModelTrainingError`. As the main method catches all of them the program is expected to run smoothly. The difference between pipelines 1 and 2 
