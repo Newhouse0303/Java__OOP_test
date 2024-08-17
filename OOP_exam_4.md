@@ -6,22 +6,42 @@ class App {
 }
 ```
 The constructor calls `run()` which prompts the UI
+
+```
     
 class Game {
     public Game() {
-    run();
+        run();
 
-    void run() {
-        UserInterface.displayUI(); 
+    public void run() {
+        UserInterface.displayUI();
+    }
+    public void play() {
+        
+        
+    }
+```
+```
+class UserInterface {
+
+    // here the interaction is done via command line but the class can be easily modified to accomodate web-based graphic UI.
+    // the class asks user the specs for creating a player and delegates the task to the PlayerManager
+    // once the Player is created the user is informed and asked to start the game which calls the `newGame.play()` method
+}
+```
+
+class PlayerManager is responsible for creating new players based on user input. If storing existing players were rquired it would also take care of that. 
+
+```
+class PlayerManager {
+    createPlayer( { userInput to match the class Player fields } ) {
+        // the type defined by the user would be used to determine which subclass is used
+        Player newPlayer = new {DesiredType}Player( { @params } )
+
 }
 ```
 
 
-    
-        
-}
-
-class UserInterface {}
 class environmentManager {}
 class combatManagers {}
 ```
